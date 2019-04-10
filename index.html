@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>CSV Formatter</title>
 </head>
 <body>
-  <form action="/formatCSV">
-    <input placeholder="Enter String Here" name="csv">
+  <form action="http://localhost:3000/formatCSV" method="POST">
+    <textarea placeholder="Enter String Here" name="csv" ></textarea>
     <button type="submit">Submit to server!</button>
   </form>
 </body>

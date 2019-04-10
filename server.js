@@ -40,6 +40,6 @@ function formatCSV(str) {
     formattedCSV.push(formattedRow.join(' '));      // Adds each row to the complete array
   });
   console.log(formattedCSV.join(newLineChar).toString());       // Logs complete array as string to the console
-  return formattedCSV.join(newLineChar).toString();       // Returns complete array as string, with '\n' between each row
+  return formattedCSV.join(newLineChar).toString();       // Returns complete array as string, with newline character between each row
 }
 

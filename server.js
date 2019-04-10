@@ -7,9 +7,9 @@ app.set('view engine', 'ejs');
 
 // Handles the post requests coming into the server and returns the result
 app.post('/formatCSV', function(req, res) {
-  csvResult = formatCSV(req.body.csv);
   // *IMPORTANT* In order to test with Postman, uncomment the next line and then comment out the 'res.render' line below
-  // res.send(csvResult);
+  // res.send(formatCSV(req.query.csv));
+  csvResult = formatCSV(req.body.csv);
   res.render('index', {result: csvResult});   // Renders the homepage with the new formatted data to display
 });
 

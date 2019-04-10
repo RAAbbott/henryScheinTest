@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>CSV Formatter</title>
+  <style>
+    body {
+      background-color: #dfe4ea;
+    }
+    .container, .row, pre {
+      margin-top: 50px;
+    }
+    textarea {
+      border: 2px solid black;
+      background-color: white;
+    }
+    a {
+      color: #ff6b81;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row header">
+      <div class="col-sm-12 text-center">
+        <h1><u>CSV Formatter</u></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <p>
+          Go ahead and test out the CSV formatter by copying the CSV sample string into the textarea, then click "Get my results!" to display your formatted results.
+          In order to complete this code challenge, I used Node.js with ExpressJS to create a simple server that handles a POST request containing a CSV string. I created a method on the server, formatCSV(str), to recieve
+          the input string and then manipulate it in order to get the desired formatting. I also used a lightweight JS templating engine, EJS (Embedded Javascript Templates), 
+          in order to easily render the formatted results below. <a href="https://github.com/RAAbbott/henryScheinTest" target="_blank"><u>See how I did it here (link to GitHub Repo)</u></a>
+        </p>
+      </div>
+    </div>
+    <form action="/formatCSV" method="POST">
+    <div class="row">
+      <div class="col-sm-5">
+        <textarea placeholder="Copy CSV string here and submit to see results..." name="csv" rows="10" cols="62"></textarea>
+      </div>
+      <div class="col-sm-7">
+      <h5><u>Sample CSV String:</u></h5>
+        <pre>
+"Patient Name","SSN","Age","Phone Number","Status"
+"Prescott, Zeke","542-51-6641",21,"801-555-2134","Opratory=2,PCP=1" 
+"Goldstein, Bucky","635-45-1254",42,"435-555-1541","Opratory=1,PCP=1"
+"Vox, Bono","414-45-1475",51,"801-555-2100","Opratory=3,PCP=2"
+        </pre>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <button class="btn btn-dark" type="submit">Get my results!</button>
+      </div>
+    </div>
+    </form>
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h5><u>Formatted CSV Result:</u></h5>
+      </div>
+        <pre><%= result %></pre>
+    </div>
+  </div>
+</body>
+</html>

@@ -3,14 +3,17 @@ const app = express();
 const bodyParser = require('body-parser');
 let csvResult = '';
 app.use(bodyParser.urlencoded({extended: true}));
+app.set('view engine', 'ejs');
 
 // Handles the post requests coming into the server and returns the result
 app.post('/formatCSV', function(req, res) {
   csvResult = formatCSV(req.body.csv);
-  res.setHeader('Content-Type', 'text/plain'); // text/plain is needed for newlines to work in response
-  res.send(csvResult);
+  res.render('index', {result: csvResult});   // Renders the homepage with the new formatted data to display
 });
 
+app.get('/', function(req, res) {
+  res.render('index', {result: ''});
+})
 
 // Activates the server on port 3000
 app.listen(3000, function() {
@@ -35,7 +38,7 @@ function formatCSV(str) {
     });
     formattedCSV.push(formattedRow.join(' '));      // Adds each row to the complete array
   });
-  console.log(formattedCSV.join(newLineChar).toString());       // Logs complete array to the console
+  console.log(formattedCSV.join(newLineChar).toString());       // Logs complete array as string to the console
   return formattedCSV.join(newLineChar).toString();       // Returns complete array as string, with '\n' between each row
 }
 

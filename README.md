@@ -6,7 +6,7 @@ I also used EJS to easily display the formatted result on the page dynamically.
 - **The code that satisfies the test requirements is found in
 server.js**
 
-# Installation
+# Setup
 
 - Clone or download this repo and open it up in your favorite IDE. 
 - Install all dependencies by running `npm install` in the project folder terminal

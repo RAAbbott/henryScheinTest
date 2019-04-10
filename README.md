@@ -33,3 +33,5 @@ app.post('/formatCSV', function(req, res) {
   res.render('index', {result: csvResult});   // Renders the homepage with the new formatted data to display
 });
 ```
+- **You will need to restart the server once making these changes
+in the code for Postman to work properly**

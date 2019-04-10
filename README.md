@@ -2,7 +2,9 @@
 
 Candidate Test for Henry Schein. For this test I created a web service in Node.js that takes in a string of CSV data, and returns the
 same CSV data formatted to fit the requirements. I used ExpressJS to create the server and handle the POST request sent from a web page.
-I also used EJS to easily display the formatted result on the page dynamically.
+I also used EJS to easily display the formatted result on the page dynamically. 
+- **The code that satisfies the test requirements is found in
+server.js**
 
 # Installation
 
